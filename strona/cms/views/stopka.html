@@ -1,0 +1,57 @@
+﻿	<div class="center"><a href="#" class="link_dodaj" id="stopka_link">Dodaj link</a></div>
+	{if $footer}
+	<table id="stopka_table">
+		<tr>
+			<td colspan="5">Stopka "{$foo_nazwa}"</td>
+		</tr>
+		<tr>
+			<td></td><td>Tytuł</td><td>Url</td><td>Edytuj</td><td>Usuń</td>
+		</tr>
+			{section name="footer" loop=$footer}
+				<tr>
+					<td>{counter}</td>
+					<td>{$footer[footer].title}</a></td>
+					<td>{$footer[footer].url}</td>
+					<td><a href="#" data-id="{$footer[footer].id}" data-title="{$footer[footer].title}" data-url="{$footer[footer].url}" class="edytuj_footer_link"><img src="img/pencil.png" alt="Edytuj"/></a></td>
+					<td><a href="#" data-id="{$footer[footer].id}" data-title="{$footer[footer].title}" class="usun_footer"><img src="img/delete.png" alt="Usuń"/></a></td>
+				</tr>
+			{/section}
+	</table>
+
+	{else}
+	<br><br><h1>Nie dodano jeszcze żadnych linków w kategorii "{$foo_nazwa}"</h1>
+	{/if}
+	
+	<div class="page_box" id="stopka_box">
+		<div id="stopka">
+			<h1 data-type="{$foo_type}">Dodaj link:</h1>
+			<span class="red title"></span>
+			<input class="input" type="text" name="title" id="title" placeholder="Tytuł linka"><br>
+			<span class="red url"></span>
+			<input class="input" type="text" name="url" id="url" placeholder="Adres URL"><br>
+			<input type="submit" name="add" value="Dodaj" class="link_dodaj" id="tak_footer"/>
+			<input type="reset" name="cancel" value="Anuluj" class="link_dodaj nie"/>
+		</div>
+	</div>
+	
+	<div class="page_box" id="stopka_box2">
+		<div id="stopka2">
+			<h1>Edytuj link:</h1>
+			<span class="red title2"></span>
+			<input class="input" type="text" name="title2" id="title2"><br>
+			<span class="red url2"></span>
+			<input class="input" type="text" name="url2" id="url2"><br>
+			<input type="submit" name="add" value="Zapisz" class="link_dodaj" id="ed_footer"/>
+			<input type="reset" name="cancel" value="Anuluj" class="link_dodaj nie"/>
+		</div>
+	</div>
+	
+	<div class="page_box" id="stopka_box3">
+		<div id="stopka3">
+			<h1>Usuń link:</h1>
+			<h2></h2><br>
+			<input type="submit" name="add" value="Usuń" class="link_dodaj" id="usun_footer"/>
+			<input type="reset" name="cancel" value="Anuluj" class="link_dodaj nie"/>
+		</div>
+	</div>
+	

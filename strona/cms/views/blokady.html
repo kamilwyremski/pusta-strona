@@ -1,0 +1,27 @@
+﻿	<div class="center"><a href="#" class="link_dodaj" id="ban_user_link">Zablokuj użytkownika</a></div>
+	
+	{if $ban}
+		<table id="ban">
+			<tr><td colspan="4">Zablokowani użytkownicy</td></tr>
+			<tr><td></td><td>E-mail</td><td>Data</td><td>Usuń</td></tr>
+			{section name="ban" loop=$ban}
+				<tr>
+					<td>{counter}</td>
+					<td>{$ban[ban].email}</a></td>
+					<td>{$ban[ban].time|date_format:"%e-%m-%Y"}</td>
+					<td><a href="#" data-id="{$ban[ban].id}" class="usun_ban"><img src="img/delete.png" alt="Usuń"/></a></td>
+				</tr>
+			{/section}
+		</table>
+	{else}
+		<br><br><h1>Brak zablokowanych użytkowników</h1>
+	{/if}
+	<div class="page_box" id="ban_user_box">
+		<div id="ban_user">
+			<h1>Zablokuj użytkownika:</h1>
+			<span class="red ban"></span>
+			<input class="input" type="text" name="email" id="email" placeholder="E-mail"><br>
+			<input type="submit" name="add" value="Dodaj" class="link_dodaj" id="tak_ban"/>
+			<input type="reset" name="cancel" value="Anuluj" class="link_dodaj nie"/>
+		</div>
+	</div>

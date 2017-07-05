@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} index\.php
+RewriteRule ^(.*)index\.php$ /$1 [R=301,L]
+ErrorDocument 404 http://error404.com.pl

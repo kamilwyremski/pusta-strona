@@ -1,0 +1,52 @@
+﻿{if $ads_0 or $ads_1}
+	{if $ads_0}
+	<table id="ads_0">
+		<tr>
+			<td colspan="7">Nieaktywowane ogłoszenia z kategorii "{$ads}"</td>
+		</tr>
+		<tr>
+			<td></td><td>Treść</td><td>E-mail</td><td>Tel</td><td>Data</td><td>Aktywuj</td><td>Usuń</td>
+		</tr>
+			{section name="ads_0" loop=$ads_0}
+				<tr>
+					<td>{counter}</td>
+					<td>{$ads_0[ads_0].content}</a></td>
+					<td>{$ads_0[ads_0].email}</td>
+					<td>{$ads_0[ads_0].tel}</td>
+					<td>{$ads_0[ads_0].time|date_format:"%e-%m-%Y"}</td>
+					<td><a href="#" data-id="{$ads_0[ads_0].id}" data-type="{$ads}" class="dodaj_ads"><img src="img/add.png" alt="Dodaj"/></a></td>
+					<td><a href="#" data-id="{$ads_0[ads_0].id}" data-email="{$ads_0[ads_0].email}" data-type="{$ads}" class="usun_ads"><img src="img/delete.png" alt="Usuń"/></a></td>
+				</tr>
+			{/section}
+	</table>
+	{/if}
+	{if $ads_1}
+	<table id="ads_1">
+		<tr>
+			<td colspan="6">Aktywowane ogłoszenia z kategorii "{$ads}"</td>
+		</tr>
+		<tr>
+			<td></td><td>Treść</td><td>E-mail</td><td>Tel</td><td>Data</td><td>Usuń</td>
+		</tr>
+			{section name="ads_1" loop=$ads_1}
+				<tr>
+					<td>{counter}</td>
+					<td>{$ads_1[ads_1].content}</a></td>
+					<td>{$ads_1[ads_1].email}</td>
+					<td>{$ads_1[ads_1].tel}</td>
+					<td>{$ads_1[ads_1].time|date_format:"%e-%m-%Y"}</td>
+					<td><a href="#" data-id="{$ads_1[ads_1].id}" data-email="{$ads_1[ads_1].email}" data-type="{$ads}" class="usun_ads"><img src="img/delete.png" alt="Usuń"/></a></td>
+				</tr>
+			{/section}
+	</table>
+	{/if}
+{else}
+	<h1>Nie dodano jeszcze żadnych ogłoszeń w kategorii "{$ads}"</h1>
+{/if}
+	<div class="page_box" id="usun_ads_box">
+		<div id="usun_ads">
+			<h1>Usuń ogłoszenie użytkownika:</h1>
+			<h3></h3>
+			<a href="#" class="link_dodaj" id="tak_usun_ads">Tak</a><a href="#" class="link_dodaj nie">Nie</a>
+		</div>
+	</div>

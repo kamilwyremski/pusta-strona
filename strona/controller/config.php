@@ -1,0 +1,1 @@
+<?$mysql_server = "edom.nazwa.pl";$mysql_admin = "root";  $mysql_pass = ""; @mysql_connect($mysql_server, $mysql_admin, $mysql_pass);mysql_query("SET NAMES utf8");@mysql_select_db('strona');?>

@@ -1,0 +1,16 @@
+1. Skopiowaæ pliki z katalogu "Strona" na serwer.
+2. Wgraæ bazê danych strona.sql
+3. Skonfigurowaæ dostêp do bazy danych w pliku controller/config.php
+	$mysql_server = "";	- nazwa serwera
+	$mysql_admin = "root";  	- nazwa u¿ytkownika
+	$mysql_pass = ""; 	- has³o u¿ytkownika
+	@mysql_connect($mysql_server, $mysql_admin, $mysql_pass); 	- tu nic nie zmieniamy
+	mysql_query("SET NAMES utf8");	- tu te¿ nic nie zmieniamy
+	@mysql_select_db('strona');	- nazwa bazy danych
+4. W cms-ie (nazwadomeny.pl/cms) mo¿emy skonfigurowaæ cenê domeny (domyœlnie 100z³) oraz maksymaln¹ iloœæ og³oszeñ typu "szukam" oraz "oferuje" (domyœlnie po 10);
+   Mo¿emy tak¿e usun¹æ og³oszenia albo aktywowaæ te których u¿ytkownicy nie aktywowali (nie potwierdzili adresu mailowego).
+   W zak³adce "blokady" mo¿emy podaæ e-maile uzytkowników którzy nie bêd¹ mogli dodawaæ og³oszeñ.
+   Mo¿emy tak¿e dodaæ strony do stopki.
+   login: test
+   has³o: 1234
+5. Nazwa domeny oraz linki do domeny s¹ generowane automatycznie.
